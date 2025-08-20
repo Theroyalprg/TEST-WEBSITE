@@ -2,17 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f0f6fc;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+      padding: 30px 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    nav {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    nav a {
+      color: #ffcb05;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background: rgba(255, 203, 5, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .content {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .profile {
+      text-align: center;
+    }
+    
+    /* Profile image fix */
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 20px;
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffcb05;
+      box-shadow: 0 0 20px rgba(255, 203, 5, 0.4);
+    }
+    
+    .main-content h2 {
+      color: #ffcb05;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .main-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: #ffcb05;
+    }
+    
+    .main-content p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    
+    .contact-info {
+      background: rgba(255, 203, 5, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    
+    .contact-info h3 {
+      color: #ffcb05;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-detail:hover {
+      transform: translateX(5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    
+    .icon {
+      margin-right: 15px;
+      width: 24px;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #ffcb05;
+    }
+    
+    .contact-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contact-type {
+      font-weight: 600;
+      color: #ffcb05;
+      font-size: 1rem;
+    }
+    
+    .contact-value {
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-value:hover {
+      color: #ffcb05;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-btn:hover {
+      transform: translateY(-5px) rotate(5deg);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+    
+    .ironman-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #fdbb2d, #b21f1f);
+      color: #1a2a6c;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .troubleshooting {
+      background: rgba(255, 100, 100, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      border-left: 4px solid #ff6b6b;
+    }
+    
+    .troubleshooting h3 {
+      color: #ff6b6b;
+      margin-bottom: 15px;
+    }
+    
+    .troubleshooting ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .troubleshooting li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>About Me</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
-  <p>I AM IRONMAN (from Meesho) 🚀</p>
-  <p>Insta: theroyalprg</p>
-  <p>Email: prg07p@gmail.com </p>
+  <div class="container">
+    <header>
+      <h1>About Me</h1>
+      <p>Aag lage chahe basti mein, PRG toh rehte MASTI mein</p>
+    </header>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    
+    <div class="content">
+      <div class="profile">
+        <div class="profile-img">
+          <img src="profile.jpg" alt="Prakarsh Raj Gupta">
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/theroyalprg" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:prg07p@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      
+      <div class="main-content">
+        <h2>WASSUP My gng, Welcome to hood!</h2>
+        <p>I'm a passionate developer with a drive for innovation and creating impactful solutions. My journey in technology has been fueled by curiosity and a desire to push boundaries.</p>
+        <p>I believe in the power of technology to transform ideas into reality and am constantly exploring new ways to leverage tech for positive change.</p>
+        <p>Ik above stated shit sounds polished and formal as hell but I'm a chill kinda guy</p>
+        
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          
+          <div class="contact-detail">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
+              <span class="contact-type">Email</span>
+              <a href="mailto:prg07p@gmail.com" class="contact-value">prg07p@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-text">
+              <span class="contact-type">Instagram</span>
+              <a href="https://www.instagram.com/theroyalprg" target="_blank" class="contact-value">@theroyalprg</a>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="icon"><i class="fas fa-briefcase"></i></div>
+            <div class="contact-text">
+              <span class="contact-type">Current Work</span>
+            </div>
+          </div>
+          
+          <div class="ironman-badge">PRAKARSH RAJ GUPTA</div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>© No rights reserved (hue hue hue).</p>
+    </footer>
+  </div>
 </body>
 </html>

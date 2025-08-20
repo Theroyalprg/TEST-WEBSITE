@@ -12,7 +12,7 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     body {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #f0f6fc;
@@ -20,69 +20,34 @@
       min-height: 100vh;
       padding: 20px;
     }
-    
+
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(17, 25, 40, 0.85);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     header {
-      background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-      padding: 30px 20px;
       text-align: center;
+      margin-bottom: 30px;
     }
-    
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    
-    nav {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    
+
     nav a {
-      color: #ffcb05;
+      margin: 0 12px;
       text-decoration: none;
+      color: #58a6ff;
       font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
     }
-    
+
     nav a:hover {
-      background: rgba(255, 203, 5, 0.2);
-      transform: translateY(-2px);
+      color: #ffcb05;
     }
-    
-    .content {
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-    
-    @media (max-width: 768px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .profile {
-      text-align: center;
-    }
-    
-    /* Profile image fix */
+
     .profile-img {
       width: 220px;
       height: 220px;
@@ -97,227 +62,153 @@
       border: 5px solid #ffcb05;
       box-shadow: 0 0 20px rgba(255, 203, 5, 0.4);
     }
-    
-    .main-content h2 {
+
+    h1 {
       color: #ffcb05;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      position: relative;
-      display: inline-block;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
     }
-    
-    .main-content h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 50%;
-      height: 3px;
-      background: #ffcb05;
-    }
-    
-    .main-content p {
-      margin-bottom: 20px;
+
+    .tagline {
       font-size: 1.1rem;
+      color: #a1c4fd;
+      margin-bottom: 25px;
     }
-    
-    .contact-info {
-      background: rgba(255, 203, 5, 0.1);
-      padding: 25px;
-      border-radius: 10px;
-      margin-top: 20px;
+
+    section {
+      margin-bottom: 35px;
     }
-    
-    .contact-info h3 {
-      color: #ffcb05;
+
+    h2 {
+      border-left: 5px solid #ffcb05;
+      padding-left: 12px;
+      margin-bottom: 18px;
+      color: #58a6ff;
+    }
+
+    p {
       margin-bottom: 15px;
-      font-size: 1.5rem;
     }
-    
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
     .contact-detail {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
-      padding: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
-    
+
     .contact-detail:hover {
-      transform: translateX(5px);
-      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-5px);
     }
-    
-    .icon {
-      margin-right: 15px;
-      width: 24px;
-      text-align: center;
+
+    .contact-detail .icon {
+      margin-right: 12px;
       font-size: 1.5rem;
       color: #ffcb05;
     }
-    
-    .contact-text {
+
+    .contact-detail .contact-text {
       display: flex;
       flex-direction: column;
     }
-    
-    .contact-type {
-      font-weight: 600;
-      color: #ffcb05;
-      font-size: 1rem;
+
+    .contact-detail .contact-type {
+      font-weight: bold;
+      color: #58a6ff;
     }
-    
-    .contact-value {
-      font-size: 1.1rem;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
+
+    .contact-detail .contact-value {
+      color: #f0f6fc;
     }
-    
-    .contact-value:hover {
-      color: #ffcb05;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-      justify-content: center;
-    }
-    
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #1a2a6c, #b21f1f);
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    
-    .social-btn:hover {
-      transform: translateY(-5px) rotate(5deg);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    
+
     footer {
       text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.3);
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 0.9rem;
+      color: #8b949e;
     }
-    
-    .ironman-badge {
-      display: inline-block;
-      background: linear-gradient(45deg, #fdbb2d, #b21f1f);
-      color: #1a2a6c;
-      padding: 8px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-top: 20px;
-      animation: pulse 2s infinite;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
     }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    
-    .troubleshooting {
-      background: rgba(255, 100, 100, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-      border-left: 4px solid #ff6b6b;
-    }
-    
-    .troubleshooting h3 {
-      color: #ff6b6b;
-      margin-bottom: 15px;
-    }
-    
-    .troubleshooting ul {
-      padding-left: 20px;
-      margin-bottom: 15px;
-    }
-    
-    .troubleshooting li {
-      margin-bottom: 10px;
+
+    footer a:hover {
+      color: #ffcb05;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>About Me</h1>
-      <p>Aag lage chahe basti mein, PRG toh rehte MASTI mein</p>
+      <div class="profile-img">
+        <img src="profile.jpg" alt="Prakarsh Raj Gupta">
+      </div>
+      <h1>Prakarsh Raj Gupta</h1>
+      <p class="tagline">Aspiring AI Engineer | Innovator | Problem Solver</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
     </header>
-    
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    
-    <div class="content">
-      <div class="profile">
-        <div class="profile-img">
-          <img src="profile.jpg" alt="Prakarsh Raj Gupta">
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm <strong>Prakarsh Raj Gupta</strong>, a passionate Computer Science student specializing in <em>Artificial Intelligence and Machine Learning</em>.
+        I love building projects, solving problems, and exploring how AI can transform industries and improve everyday life.
+      </p>
+      <p>
+        I believe in continuous learning and innovation. My goal is to become a leader in AI research and application, while contributing
+        to open-source communities and impactful projects.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <div class="contact-info">
+        <div class="contact-detail">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <span class="contact-type">Email</span>
+            <span class="contact-value">youremail@example.com</span>
+          </div>
         </div>
-        <div class="social-links">
-          <a href="https://www.instagram.com/theroyalprg" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="mailto:prg07p@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+        <div class="contact-detail">
+          <div class="icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-text">
+            <span class="contact-type">Phone</span>
+            <span class="contact-value">+91 9876543210</span>
+          </div>
         </div>
-      </div>
-      
-      <div class="main-content">
-        <h2>WASSUP My gng, Welcome to hood!</h2>
-        <p>I'm a passionate developer with a drive for innovation and creating impactful solutions. My journey in technology has been fueled by curiosity and a desire to push boundaries.</p>
-        <p>I believe in the power of technology to transform ideas into reality and am constantly exploring new ways to leverage tech for positive change.</p>
-        <p>Ik above stated shit sounds polished and formal as hell but I'm a chill kinda guy</p>
-        
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          
-          <div class="contact-detail">
-            <div class="icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-text">
-              <span class="contact-type">Email</span>
-              <a href="mailto:prg07p@gmail.com" class="contact-value">prg07p@gmail.com</a>
-            </div>
+        <div class="contact-detail">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-text">
+            <span class="contact-type">Location</span>
+            <span class="contact-value">Bhopal, India</span>
           </div>
-          
-          <div class="contact-detail">
-            <div class="icon"><i class="fab fa-instagram"></i></div>
-            <div class="contact-text">
-              <span class="contact-type">Instagram</span>
-              <a href="https://www.instagram.com/theroyalprg" target="_blank" class="contact-value">@theroyalprg</a>
-            </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon"><i class="fas fa-briefcase"></i></div>
+          <div class="contact-text">
+            <span class="contact-type">Current Work</span>
+            <span class="contact-value">B.Tech CSE (AIML) Student</span>
           </div>
-          
-          <div class="contact-detail">
-            <div class="icon"><i class="fas fa-briefcase"></i></div>
-            <div class="contact-text">
-              <span class="contact-type">Current Work</span>
-            </div>
-          </div>
-          
-          <div class="ironman-badge">PRAKARSH RAJ GUPTA</div>
         </div>
       </div>
-    </div>
-    
+    </section>
+
     <footer>
-      <p>© No rights reserved (hue hue hue).</p>
+      <p>&copy; 2025 Prakarsh Raj Gupta | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
     </footer>
   </div>
 </body>
